@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @booking.date %>
+</p>
+
+<p>
+  <strong>Time starts:</strong>
+  <%= @booking.time_starts %>
+</p>
+
+<p>
+  <strong>Time finishes:</strong>
+  <%= @booking.time_finishes %>
+</p>
+
+<p>
+  <strong>Number of dogs:</strong>
+  <%= @booking.number_of_dogs %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @booking.owner %>
+</p>
+
+<p>
+  <strong>Sitter:</strong>
+  <%= @booking.sitter %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

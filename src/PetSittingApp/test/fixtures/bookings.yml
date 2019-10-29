@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-10-29
+  time_starts: 2019-10-29 11:59:38
+  time_finishes: 2019-10-29 11:59:38
+  number_of_dogs: 1
+  owner: one
+  sitter: one
+
+two:
+  date: 2019-10-29
+  time_starts: 2019-10-29 11:59:38
+  time_finishes: 2019-10-29 11:59:38
+  number_of_dogs: 1
+  owner: two
+  sitter: two

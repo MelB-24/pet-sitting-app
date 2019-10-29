@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sitter.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @sitter.address %>
+</p>
+
+<p>
+  <strong>Suburb:</strong>
+  <%= @sitter.suburb %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @sitter.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @sitter.postcode %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @sitter.business_name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sitter.price %>
+</p>
+
+<p>
+  <strong>Sitter user:</strong>
+  <%= @sitter.sitter_user %>
+</p>
+
+<%= link_to 'Edit', edit_sitter_path(@sitter) %> |
+<%= link_to 'Back', sitters_path %>

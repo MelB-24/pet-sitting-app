@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <div class='navbar'>
+      <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
+      <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
+      <% if owner_user_signed_in? || sitter_user_signed_in? %>
+        <%= link_to "logout", destroy_path, method: :delete %>
+      <% else %>
+          <%= link_to "login", sign_in_path %>
+          <%= link_to "sign up", sign_up_path %>
+      <% end %>
+    </div>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
