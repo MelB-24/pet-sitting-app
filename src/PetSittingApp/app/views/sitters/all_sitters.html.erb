@@ -22,9 +22,6 @@
         <td><%= sitter.postcode %></td>
         <td><%= sitter.business_name %></td>
         <td><%= sitter.price %></td>
-        <td><% form_for :approved_sitter, @approved_sitter, :url => { :action => "create" } do |f| %>
-              <%= submit_tag "Approve This Sitter" %>
-            <% end %>
       </tr>
     <% end %>
   </tbody>
