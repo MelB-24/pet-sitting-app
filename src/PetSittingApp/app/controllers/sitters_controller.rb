@@ -1,5 +1,5 @@
 class SittersController < ApplicationController
-  before_action :authenticate_sitter_user!
+  before_action :authenticate_sitter_user!, except: [:all_sitters]
   before_action :set_sitter, only: [:show, :edit, :update, :destroy]
 
   # GET /sitters
@@ -8,12 +8,19 @@ class SittersController < ApplicationController
     @sitter = current_sitter_user.sitter
   end
 
+  def all_sitters
+    @sitters = Sitter.all
+  end
+
   # GET /sitters/1
   # GET /sitters/1.json
   def show
   end
 
   # GET /sitters/new
+  def new
+    @sitter = Sitter.new
+  end
 
   # GET /sitters/1/edit
   def edit
@@ -27,7 +34,7 @@ class SittersController < ApplicationController
     @sitter_user.sitter = @sitter
 
     if @sitter.save
-      redirect_to @sitter
+      redirect_to sitters_path
     else
       render :new
     end

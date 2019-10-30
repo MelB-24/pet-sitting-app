@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
+  before_action :set_user_booking, only: [:show, :edit, :update, :destroy]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
   # GET /bookings.json
   def index
-
     @bookings = Booking.all
+    
   end
 
   # GET /bookings/1
@@ -75,6 +76,9 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:date, :time_starts, :time_finishes, :number_of_dogs, :owner_id, :sitter_id)
+      params.require(:booking).permit(:date, :time_starts, :time_finishes, :number_of_dogs, :approved_sitter_id)
     end
+
+    
+  
 end

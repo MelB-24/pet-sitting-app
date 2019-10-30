@@ -13,6 +13,11 @@ class OwnersController < ApplicationController
   def show
   end
 
+  # GET /owners/new
+  def new
+    @owner = Owner.new
+  end
+
   # GET /owners/1/edit
   def edit
   end
@@ -25,7 +30,7 @@ class OwnersController < ApplicationController
     @owner_user.owner = @owner
 
     if @owner.save
-      redirect_to @owner
+      redirect_to owners_path
     else
       render :new
     end

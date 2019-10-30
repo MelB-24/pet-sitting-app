@@ -14,8 +14,7 @@ class OwnerUsers::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-
-    redirect_to owners_path
+    new_owner_path
   end
 
   # GET /resource/edit
@@ -56,18 +55,10 @@ class OwnerUsers::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    super(resource)
-
+    new_owner_path
     # stored_location_for(:owner_user) || 
-    owners_path
   end
 
-  def after_sign_in_path_for(resource)
-    super(resource)
-
-    # stored_location_for(:owner_user) || 
-    owners_path
-  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

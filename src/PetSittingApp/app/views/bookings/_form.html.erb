@@ -31,14 +31,9 @@
     <%= form.number_field :number_of_dogs %>
   </div>
 
-  <div class="field">
-    <%= form.label :owner_id %>
-    <%= form.text_field :owner_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sitter_id %>
-    <%= form.text_field :sitter_id %>
+  <div>
+    <%= form.label :approved_sitter_id %>
+    <%= form.select :approved_sitter_id, options_for_select(ApprovedSitter.all.collect {|u|[u.sitter.name, u.id] })%>
   </div>
 
   <div class="actions">

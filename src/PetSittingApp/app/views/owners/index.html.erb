@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Owners</h1>
+<h1>Dashboard</h1>
+
+<%= @owner.name %>
 
 <%= link_to 'Bookings', bookings_path %>
+<%= link_to 'Sitters', owners_sitters_path %>
+
 
 

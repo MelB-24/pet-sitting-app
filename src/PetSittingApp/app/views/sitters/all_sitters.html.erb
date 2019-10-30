@@ -1,0 +1,31 @@
+<h1>Hello</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Suburb</th>
+      <th>State</th>
+      <th>Postcode</th>
+      <th>Business name</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sitters.each do |sitter| %>
+      <tr>
+        <td><%= sitter.name %></td>
+        <td><%= sitter.suburb %></td>
+        <td><%= sitter.state %></td>
+        <td><%= sitter.postcode %></td>
+        <td><%= sitter.business_name %></td>
+        <td><%= sitter.price %></td>
+        <td><% form_for :approved_sitter, @approved_sitter, :url => { :action => "create" } do |f| %>
+              <%= submit_tag "Approve This Sitter" %>
+            <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

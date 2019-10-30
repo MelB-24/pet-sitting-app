@@ -16,19 +16,14 @@
 </p>
 
 <p>
-  <strong>Number of dogs:</strong>
+  <strong>Dogs:</strong>
   <%= @booking.number_of_dogs %>
 </p>
 
 <p>
-  <strong>Owner:</strong>
-  <%= @booking.owner %>
-</p>
-
-<p>
   <strong>Sitter:</strong>
-  <%= @booking.sitter %>
+  <%= @booking.approved_sitter.sitter.name %>
 </p>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
+
 <%= link_to 'Back', bookings_path %>

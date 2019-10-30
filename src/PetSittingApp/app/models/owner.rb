@@ -1,4 +1,4 @@
 class Owner < ApplicationRecord
   belongs_to :owner_user
-  has_many :bookings
+  has_many :approved_sitters
 end

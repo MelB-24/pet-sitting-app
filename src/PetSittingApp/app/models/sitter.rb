@@ -1,4 +1,4 @@
 class Sitter < ApplicationRecord
   belongs_to :sitter_user
-  has_many :bookings
+  has_one :approved_sitter
 end
