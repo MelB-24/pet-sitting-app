@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dogs
   resources :bookings
   devise_for :sitter_users, :controllers => {:registrations => "sitter_users/registrations"}
   devise_for :owner_users, :controllers => {:registrations => "owner_users/registrations"}

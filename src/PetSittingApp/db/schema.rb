@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_053525) do
+ActiveRecord::Schema.define(version: 2019_10_31_032212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 2019_10_29_053525) do
     t.bigint "approved_sitter_id"
     t.boolean "approved_booking"
     t.index ["approved_sitter_id"], name: "index_bookings_on_approved_sitter_id"
+  end
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.date "date_of_birth"
+    t.integer "microchip_number"
+    t.text "bio"
+    t.integer "sex"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_dogs_on_owner_id"
   end
 
   create_table "owner_users", force: :cascade do |t|
@@ -85,6 +98,7 @@ ActiveRecord::Schema.define(version: 2019_10_29_053525) do
   add_foreign_key "approved_sitters", "owners"
   add_foreign_key "approved_sitters", "sitters"
   add_foreign_key "bookings", "approved_sitters"
+  add_foreign_key "dogs", "owners"
   add_foreign_key "owners", "owner_users"
   add_foreign_key "sitters", "sitter_users"
 end

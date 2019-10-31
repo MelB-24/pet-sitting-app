@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  date_of_birth: 2019-10-31
+  microchip_number: 1
+  bio: MyText
+  sex: 1
+  owner: one
+
+two:
+  name: MyString
+  breed: MyString
+  date_of_birth: 2019-10-31
+  microchip_number: 1
+  bio: MyText
+  sex: 1
+  owner: two
