@@ -11,6 +11,7 @@
 
   <body>
     <div class='navbar'>
+      <h1>PetSitters</h1>
       <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
       <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
       <% if owner_user_signed_in? || sitter_user_signed_in? %>

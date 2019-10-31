@@ -5,8 +5,19 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
     
+    if owner_user_signed_in?
+      @bookings = current_owner_user.owner.bookings
+    end
+
+    if sitter_user_signed_in?
+      if current_sitter_user.sitter.approved_sitter != nil
+        @bookings = current_sitter_user.sitter.approved_sitter.bookings
+      else
+        @bookings = []
+      end
+    end
+
   end
 
   # GET /bookings/1

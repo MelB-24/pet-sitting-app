@@ -36,15 +36,18 @@
     <%= form.text_area :bio %>
   </div>
 
-  <div class="field">
+  <div>
     <%= form.label :sex %>
-    <%= form.number_field :sex %>
+    <% Dog.sexes.keys.each do |sex| %>
+      <%= form.label sex %>
+      <%= form.radio_button :sex, sex %>
+
+      <% if sex == dog.sex %>
+        <% form.radio_button :sex, :checked => true %>
+      <% end %>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :owner_id %>
-    <%= form.text_field :owner_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

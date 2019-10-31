@@ -1,10 +1,11 @@
 class DogsController < ApplicationController
+  before_action :authenticate_owner_user!
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    @dogs = current_owner_user.owner.dogs
   end
 
   # GET /dogs/1
@@ -14,7 +15,8 @@ class DogsController < ApplicationController
 
   # GET /dogs/new
   def new
-    @dog = Dog.new
+
+    @dog = current_owner_user.owner.dogs.new
   end
 
   # GET /dogs/1/edit
@@ -24,8 +26,7 @@ class DogsController < ApplicationController
   # POST /dogs
   # POST /dogs.json
   def create
-    @dog = Dog.new(dog_params)
-
+    @dog = current_owner_user.owner.dogs.new(dog_params)
     respond_to do |format|
       if @dog.save
         format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
