@@ -7,22 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/3b59bc8a77.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class='navbar'>
-      <h1>PetSitters</h1>
-      <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
-      <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
-      <% if owner_user_signed_in? || sitter_user_signed_in? %>
-        <%= link_to "logout", destroy_path, method: :delete %>
-      <% else %>
-          <%= link_to "login", sign_in_path %>
-          <%= link_to "sign up", sign_up_path %>
-      <% end %>
 
-     
-    </div>
+    <nav class= "navbar navbar-expand-lg navbar-light bg-light">
+      <i class="fas fa-dog dog_icon"></i>
+      <a class="navbar-brand">PetSitters</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav">
+        <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
+        <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
+        <% if owner_user_signed_in? || sitter_user_signed_in? %>
+          <%= link_to "logout", destroy_path, method: :delete, class:"nav-item nav-link"  %>
+        <% else %>
+            <%= link_to "login", sign_in_path, class:"nav-item nav-link" %>
+            <%= link_to "sign up", sign_up_path, class: "nav-item nav-link" %>
+        <% end %>
+      </div>
+    </nav>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

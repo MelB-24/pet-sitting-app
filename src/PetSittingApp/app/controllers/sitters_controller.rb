@@ -16,7 +16,7 @@ class SittersController < ApplicationController
     params.permit(:sitter_id)
     sitter_id = params[:sitter_id]
     if ApprovedSitter.find_by(sitter_id: sitter_id, owner_id: current_owner_user.owner.id)
-      flash[:notice] = 'You have already approved this sitter'
+      flash[:alert] = 'You have already approved this sitter'
     else
       @approve_sitter = ApprovedSitter.create(:owner_id => current_owner_user.owner.id, :sitter_id => params[:sitter_id])
       flash[:notice] = "Sitter succesfully approved"
