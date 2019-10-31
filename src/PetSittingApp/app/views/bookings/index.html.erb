@@ -40,7 +40,12 @@
 
 <br>
 
-<%= link_to 'Dashboard', owners_path %>
+
+<% if sitter_user_signed_in? %> 
+  <%= link_to 'Dashboard', sitters_path %>
+<% elsif owner_user_signed_in? %>
+  <%= link_to 'Dashboard', owners_path %>
+<% end %>
 
 <% if owner_user_signed_in? %>
     <%= link_to 'New Booking', new_booking_path %> 
