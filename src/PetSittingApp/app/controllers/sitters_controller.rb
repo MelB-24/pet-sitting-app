@@ -1,5 +1,5 @@
 class SittersController < ApplicationController
-  before_action :authenticate_sitter_user!, except: [:all_sitters]
+  before_action :authenticate_sitter_user!, except: [:all_sitters, :approve_sitter]
   before_action :set_sitter, only: [:show, :edit, :update, :destroy]
 
   # GET /sitters
@@ -10,6 +10,21 @@ class SittersController < ApplicationController
 
   def all_sitters
     @sitters = Sitter.all
+  end
+
+  def approve_sitter
+    params.permit(:sitter_id)
+    sitter_id = params[:sitter_id]
+    if ApprovedSitter.find_by(sitter_id: sitter_id, owner_id: current_owner_user.owner.id)
+      flash[:notice] = 'You have already approved this sitter'
+    else
+      @approve_sitter = ApprovedSitter.create(:owner_id => current_owner_user.owner.id, :sitter_id => params[:sitter_id])
+      flash[:notice] = "Sitter succesfully approved"
+    end
+    redirect_to owners_sitters_path
+    
+    # create an approved sitter row
+    # current_sitter_user call method in controller with id of the sitter
   end
 
   # GET /sitters/1

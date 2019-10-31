@@ -1,0 +1,30 @@
+<h1>My Approved Sitters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business name</th>
+      <th>Name</th>
+      <th>Suburb</th>
+      <th>State</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @approved_sitters.each do |approved_sitter| %>
+      <tr>
+        <td><%= approved_sitter.sitter.business_name %></td>
+        <td><%= approved_sitter.sitter.name %></td>
+        <td><%= approved_sitter.sitter.suburb %></td>
+        <td><%= approved_sitter.sitter.state %></td>
+        <td><%= approved_sitter.sitter.price %></td>
+        <td><%= link_to 'Remove this Approved Sitter', test_path(approved_sitter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Search for a new sitter', owners_sitters_path %>
+<%= link_to 'Dashboard', owners_path %>

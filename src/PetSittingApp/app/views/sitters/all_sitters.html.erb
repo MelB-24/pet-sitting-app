@@ -1,13 +1,12 @@
-<h1>Hello</h1>
+<h1>Sitters to Approve</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Business name</th>
       <th>Name</th>
       <th>Suburb</th>
       <th>State</th>
-      <th>Postcode</th>
-      <th>Business name</th>
       <th>Price</th>
       <th colspan="3"></th>
     </tr>
@@ -16,13 +15,17 @@
   <tbody>
     <% @sitters.each do |sitter| %>
       <tr>
+        <td><%= sitter.business_name %></td>
         <td><%= sitter.name %></td>
         <td><%= sitter.suburb %></td>
         <td><%= sitter.state %></td>
-        <td><%= sitter.postcode %></td>
-        <td><%= sitter.business_name %></td>
         <td><%= sitter.price %></td>
+
+        <td><%= link_to 'Approve this sitter', approved_path(sitter), :method => "post" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Dashboard', owners_path %>
+<%= link_to 'Back to My Sitters', owners_my_sitters_path %>

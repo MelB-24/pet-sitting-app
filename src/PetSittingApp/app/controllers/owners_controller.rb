@@ -8,6 +8,20 @@ class OwnersController < ApplicationController
     @owner = current_owner_user.owner
   end
 
+  def my_sitters
+    @approved_sitters = ApprovedSitter.where(owner_id: current_owner_user.owner.id)
+  end
+
+  def destroy_approved_sitter
+    
+    params.permit(:approved_sitter_id)
+    @approved_sitter = ApprovedSitter.find(params[:approved_sitter_id])
+    @approved_sitter.destroy
+    redirect_to owners_my_sitters_path
+
+  end
+
+
   # GET /owners/1
   # GET /owners/1.json
   def show
