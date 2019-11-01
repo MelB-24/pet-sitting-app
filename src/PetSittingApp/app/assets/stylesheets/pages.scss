@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.main-home {
+  display: flex;
+  justify-content: center;
+}
+
+
 .login-links {
   background-color: #F29FBD;
   border-radius: 20px;
@@ -13,10 +20,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.home-page-body {
-  background-image: url(/assets/beagle.jpg);
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  height: 200vh;
+.dog-image {
+  height: 600px;
 }

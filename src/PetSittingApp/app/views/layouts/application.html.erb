@@ -12,16 +12,32 @@
   </head>
   <body>
     <nav class='nav-bar'>
-      <i class="fas fa-dog dog_icon"></i>
-      <a><%= link_to 'PetSitters', root_path, class: 'header' %></a>
+      <div>
+        <i class="fas fa-dog dog_icon"></i>
+        <a><%= link_to 'PetSitters', root_path, class: 'header' %></a>
+      </div>
       <div>
         <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
         <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
         <% if owner_user_signed_in? || sitter_user_signed_in? %>
-          <%= link_to "Logout", destroy_path, method: :delete, class: 'nav-bar-links' %>
+          <button class='nav-bar-links'>
+            <%= link_to "Logout", destroy_path, method: :delete %>
+          </button>
         <% else %>
-            <%= link_to "Login", sign_in_path, class: 'nav-bar-links' %>
-            <%= link_to "Sign up", sign_up_path, class: 'nav-bar-links' %>
+          <div class="dropdown">
+            <button class="dropbtn"><%= link_to "Login", sign_in_path %></button>
+              <div class="dropdown-content">
+                <a><%= link_to 'Sitter Login', sitters_path %></a>
+                <a><%= link_to 'Owner Login', owners_path %></a>
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn"><%= link_to "Sign up", sign_up_path %></button>
+              <div class="dropdown-content">
+                <a><%= link_to 'Sign Up as a Sitter', new_sitter_user_registration_path %></a>
+                <a><%= link_to 'Sign Up your Pets', new_owner_user_registration_path %></a>
+              </div>
+          </div>
         <% end %>
       </div> 
     </nav>
@@ -31,3 +47,6 @@
     <%= yield %>
   </body>
 </html>
+
+
+

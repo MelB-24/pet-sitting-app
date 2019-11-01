@@ -1,9 +1,10 @@
-
-<div class='home-page-body'>
-
-  <% if sitter_user_signed_in? %> 
-    <%= link_to 'Dashboard', sitters_path %>
-  <% elsif owner_user_signed_in? %>
-    <%= link_to 'Dashboard', owners_path %>
-  <% end %>
+<div class='main-home'>
+  <div class='home-page-links'>
+    <% if sitter_user_signed_in? %> 
+      <%= link_to 'Dashboard', sitters_path %>
+    <% elsif owner_user_signed_in? %>
+      <%= link_to 'Dashboard', owners_path %>
+    <% end %>
+  </div>
+  <%= image_tag 'dogs', class: 'dog-image' %>
 </div>
