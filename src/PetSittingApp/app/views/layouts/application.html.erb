@@ -5,29 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: :all, 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/3b59bc8a77.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
-
-    <nav>
+    <nav class='nav-bar'>
       <i class="fas fa-dog dog_icon"></i>
-      <a><%= link_to 'PetSitters', root_path %></a>
+      <a><%= link_to 'PetSitters', root_path, class: 'header' %></a>
       <div>
         <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
         <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
         <% if owner_user_signed_in? || sitter_user_signed_in? %>
-          <%= link_to "logout", destroy_path, method: :delete %>
+          <%= link_to "Logout", destroy_path, method: :delete, class: 'nav-bar-links' %>
         <% else %>
-            <%= link_to "login", sign_in_path %>
-            <%= link_to "sign up", sign_up_path %>
+            <%= link_to "Login", sign_in_path, class: 'nav-bar-links' %>
+            <%= link_to "Sign up", sign_up_path, class: 'nav-bar-links' %>
         <% end %>
       </div> 
     </nav>
 
+    
 
     <%= yield %>
   </body>

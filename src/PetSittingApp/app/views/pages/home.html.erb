@@ -1,5 +1,9 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
+<div class='home-page-body'>
 
-<h1>PetSitters</h1>
+  <% if sitter_user_signed_in? %> 
+    <%= link_to 'Dashboard', sitters_path %>
+  <% elsif owner_user_signed_in? %>
+    <%= link_to 'Dashboard', owners_path %>
+  <% end %>
+</div>

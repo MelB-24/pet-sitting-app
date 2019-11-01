@@ -3,3 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.sitter-dashboard {
+  height: calc(100vh - 80px);
+  background-color: #FCF7FF;
+  flex-direction: column;
+  display: flex;
+}
+
+.sitter-top-nav {
+  height: 50px;
+  background-color: #00A98B;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-heading {
+  color: white;
+  font-family: 'Staatliches', cursive;
+  margin: 0px 12px;
+}
+
+.dashboard-heading:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.side-links {
+  height: 20px;
+  display: flex;
+  flex-direction: column;;
+}
+
+.side-link {
+  color: black;
+}

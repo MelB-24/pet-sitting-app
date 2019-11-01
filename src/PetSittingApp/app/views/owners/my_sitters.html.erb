@@ -20,7 +20,13 @@
         <td><%= approved_sitter.sitter.suburb %></td>
         <td><%= approved_sitter.sitter.state %></td>
         <td><%= approved_sitter.sitter.price %></td>
-        <td><%= link_to 'Remove this Approved Sitter', test_path(approved_sitter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% if approved_sitter.bookings.length > 0 %>
+        <%= link_to 'Remove this Approved Sitter', test_path(approved_sitter), method: :delete, data: { confirm: 'This approved sitter has a booking attached. If you delete this sitter, the associated booking will also be cancelled.' } %>
+        <% else %>
+        <%= link_to 'Remove this Approved Sitter', test_path(approved_sitter), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+
+        </td>
       </tr>
     <% end %>
   </tbody>

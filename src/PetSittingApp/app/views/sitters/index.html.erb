@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>SITTER Dashboard</h1>
-
-<%= link_to 'Bookings', bookings_path %>
+<div class='sitter-dashboard'>
+  <div class='sitter-top-nav'>
+    <h1><%= link_to 'Sitter Dashboard', sitters_path, class: 'dashboard-heading' %></h1>
+    <h1>Welcome <%= @sitter.name %></h1>
+  </div>
+  <div class='side-links'>
+    <%= link_to 'My Bookings', bookings_path, class: 'side-link' %>
+  </div>
+</div>

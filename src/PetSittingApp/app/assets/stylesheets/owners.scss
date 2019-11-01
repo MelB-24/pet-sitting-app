@@ -1,3 +1,41 @@
 // Place all the styles related to the Owners controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.owner-dashboard {
+  height: 100vh;
+  background-color: #FCF7FF;
+  flex-direction: column;
+  display: flex;
+}
+
+.owner-top-nav {
+  height: 50px;
+  background-color: #00A98B;
+  display: flex;
+  justify-content: space-between;
+}
+
+.owner-top-nav h1 {
+  color: white;
+  font-family: 'Staatliches', cursive;
+  margin: 0px 12px;
+  text-decoration: none;
+}
+
+.dashboard-heading:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+.side-links {
+  height: 20px;
+  display: flex;
+  flex-direction: column;;
+}
+
+.side-link {
+  color: black;
+}

@@ -26,15 +26,11 @@
     <%= form.time_select :time_finishes %>
   </div>
 
-  <div class="field">
-    <%= form.label :number_of_dogs %>
-    <%= form.number_field :number_of_dogs %>
-  </div>
-
   <div>
     <%= form.label :approved_sitter_id %>
     <%= form.select :approved_sitter_id, options_for_select(ApprovedSitter.all.collect {|u|[u.sitter.name, u.id] })%>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

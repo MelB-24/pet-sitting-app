@@ -7,17 +7,12 @@
 
 <p>
   <strong>Time starts:</strong>
-  <%= @booking.time_starts %>
+  <%= @booking.time_starts.strftime('%H:%M') %>
 </p>
 
 <p>
   <strong>Time finishes:</strong>
-  <%= @booking.time_finishes %>
-</p>
-
-<p>
-  <strong>Dogs:</strong>
-  <%= @booking.number_of_dogs %>
+  <%= @booking.time_finishes.strftime('%H:%M') %>
 </p>
 
 <p>

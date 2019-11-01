@@ -2,3 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.login-links {
+  background-color: #F29FBD;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  justify-self: end;
+  color: black;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.home-page-body {
+  background-image: url(/assets/beagle.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 200vh;
+}
