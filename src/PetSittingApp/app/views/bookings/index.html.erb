@@ -8,7 +8,8 @@
       <th>Date</th>
       <th>Time starts</th>
       <th>Time finishes</th>
-      <th>Sitter</th>
+      <th><% if owner_user_signed_in? %>Sitter<% end %></th>
+      <th><% if sitter_user_signed_in? %>Approved Booking<% end %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,14 +24,13 @@
               <%= booking.approved_sitter.sitter.name %>
             <% end %>
         </td>
-        <td><%= link_to 'Show', booking %></td>
         <td><% if owner_user_signed_in? %> 
           <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
         </td>
         <td><% if sitter_user_signed_in? %> 
-              <%= check_box_tag :approved_booking, checked = true %>
-            <% end %>
+              <%= check_box_tag 'active', booking.approved_booking %>
+            <% end %></td>
       </tr>
     <% end %>
   </tbody>

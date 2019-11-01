@@ -1,6 +1,6 @@
 class SittersController < ApplicationController
   before_action :authenticate_sitter_user!, except: [:all_sitters, :approve_sitter]
-  before_action :set_sitter, only: [:show, :edit, :update, :destroy]
+  before_action :set_sitter, only: [:edit, :update, :destroy]
 
   # GET /sitters
   # GET /sitters.json
@@ -29,8 +29,7 @@ class SittersController < ApplicationController
 
   # GET /sitters/1
   # GET /sitters/1.json
-  def show
-  end
+
 
   # GET /sitters/new
   def new
@@ -58,14 +57,8 @@ class SittersController < ApplicationController
   # PATCH/PUT /sitters/1
   # PATCH/PUT /sitters/1.json
   def update
-    respond_to do |format|
-      if @sitter.update(sitter_params)
-        format.html { redirect_to @sitter, notice: 'Sitter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sitter }
-      else
-        format.html { render :edit }
-        format.json { render json: @sitter.errors, status: :unprocessable_entity }
-      end
+    if @sitter.update(sitter_params)
+      redirect_to sitters_path
     end
   end
 
