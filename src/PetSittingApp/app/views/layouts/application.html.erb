@@ -18,28 +18,34 @@
       </div>
       <div>
         <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>
-        <% new_path = owner_user_signed_in? ? new_owner_user_session_path : new_sitter_user_session_path %>
         <% if owner_user_signed_in? || sitter_user_signed_in? %>
-          <button class='nav-bar-links'>
-            <%= link_to "Logout", destroy_path, method: :delete %>
-          </button>
+        <div class="dropdown">
+          <%= link_to "Logout", destroy_path, method: :delete, class:'dropbtn' %>
+        </div>
+        <div class='dropdown'>
+          <% if sitter_user_signed_in? %> 
+            <%= link_to 'Dashboard', sitters_path, class: 'dropbtn'  %>
+          <% elsif owner_user_signed_in? %>
+            <%= link_to 'Dashboard', owners_path, class: 'dropbtn'  %>
+          <% end %>
+        </div>
         <% else %>
           <div class="dropdown">
-            <button class="dropbtn"><%= link_to "Login", sign_in_path %></button>
+            <button class="dropbtn">Login</button>
               <div class="dropdown-content">
-                <a><%= link_to 'Sitter Login', sitters_path %></a>
-                <a><%= link_to 'Owner Login', owners_path %></a>
+                <%= link_to 'Sitter Login', sitters_path, class: 'dropdown-links' %>
+                <%= link_to 'Owner Login', owners_path, class: 'dropdown-links' %>
               </div>
           </div>
           <div class="dropdown">
-            <button class="dropbtn"><%= link_to "Sign up", sign_up_path %></button>
+            <button class="dropbtn">Sign Up</button>
               <div class="dropdown-content">
-                <a><%= link_to 'Sign Up as a Sitter', new_sitter_user_registration_path %></a>
-                <a><%= link_to 'Sign Up your Pets', new_owner_user_registration_path %></a>
+                <%= link_to 'Sign Up as a Sitter', new_sitter_user_registration_path, class: 'dropdown-links' %>
+                <%= link_to 'Sign Up your Pets', new_owner_user_registration_path, class: 'dropdown-links' %>
               </div>
           </div>
         <% end %>
-      </div> 
+      <div>
     </nav>
 
     
