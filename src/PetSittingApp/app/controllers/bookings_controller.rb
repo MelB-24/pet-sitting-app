@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
       end
     end
 
+    @owner = current_owner_user.owner
   end
 
   # GET /bookings/1

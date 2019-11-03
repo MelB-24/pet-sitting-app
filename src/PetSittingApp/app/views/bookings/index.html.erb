@@ -1,45 +1,79 @@
+<div class='owner-dashboard'>
+  <div class='owner-top-nav'>
+    <h1 class='dashboard-heading'>Owner Dashboard</h1>
+    <h1>Welcome <%= @owner.name %></h1>
+  </div>
+  <div class='main-booking'>
+    <div class='side-links'>
+      <%= link_to 'My Bookings', bookings_path, class: 'side-link' %>
+      <%= link_to 'My Sitters', owners_my_sitters_path, class: 'side-link' %>
+      <%= link_to 'My Dogs', dogs_path, class: 'side-link' %>
+    </div>
+
+    <div class='bookings-index'>
+      <h1>My Bookings</h1>
+
+      <%= month_calendar(attribute: :time_starts) events: @bookings do |date, bookings| %>
+        <%= date.day %>
+
+        <% bookings.each do |booking| %>
+          <div>
+            <%= booking.approved_sitter_id %>
+          </div>
+        <% end %>
+      <% end %>
 
 
-<h1>My Bookings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Time starts</th>
-      <th>Time finishes</th>
-      <th><% if owner_user_signed_in? %>Sitter<% end %></th>
-      <th><% if sitter_user_signed_in? %>Approved Booking<% end %></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.date %></td>
-        <td><%= booking.time_starts.strftime('%H:%M') %></td>
-        <td><%= booking.time_finishes.strftime('%H:%M') %></td>
-        <td><% if owner_user_signed_in? %> 
-              <%= booking.approved_sitter.sitter.name %>
-            <% end %>
-        </td>
-        <td><% if owner_user_signed_in? %> 
-          <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-        </td>
-        <td><% if sitter_user_signed_in? %> 
-              <%= check_box_tag 'active', booking.approved_booking %>
-            <% end %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<% if owner_user_signed_in? %>
-    <%= link_to 'New Booking', new_booking_path %> 
-<% end %>  
+
+
+
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time starts</th>
+            <th>Time finishes</th>
+            <th><% if owner_user_signed_in? %>Sitter<% end %></th>
+            <th><% if sitter_user_signed_in? %>Approved Booking<% end %></th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td><%= booking.date %></td>
+              <td><%= booking.time_starts.strftime('%H:%M') %></td>
+              <td><%= booking.time_finishes.strftime('%H:%M') %></td>
+              <td><% if owner_user_signed_in? %> 
+                    <%= booking.approved_sitter.sitter.name %>
+                  <% end %>
+              </td>
+              <td><% if owner_user_signed_in? %> 
+                <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+              </td>
+              <td><% if sitter_user_signed_in? %> 
+                    <%= check_box_tag 'active', booking.approved_booking %>
+                  <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <% if owner_user_signed_in? %>
+          <%= link_to 'New Booking', new_booking_path %> 
+      <% end %>  
+    </div>
+  </div>
+</div>
 
 
