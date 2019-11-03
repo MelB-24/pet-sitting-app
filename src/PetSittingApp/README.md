@@ -1,24 +1,35 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Identification of the problem you are trying to solve by building this particular marketplace app.
 
-Things you may want to cover:
+This marketplace assignment I am building a Pet Sitting website that allows users to sign up to watch dogs or owners to send their dogs to a sitter. Although there are a few services out there that allow this, there is not one that is well known and used in Australia. 
 
-* Ruby version
+## Why is it a problem that needs solving?
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Description of your marketplace app (website), including:
+- Purpose
+- Functionality / features
+- Sitemap
+- Screenshots
+- Target audience
+- Tech stack (e.g. html, css, deployment platform, etc)
 
-* Database initialization
+## User stories for your app
 
-* How to run the test suite
+## Wireframes for your app
 
-* Services (job queues, cache servers, search engines, etc.)
+## An ERD for your app
 
-* Deployment instructions
+## Explain the different high-level components (abstractions) in your app
 
-* ...
+## Detail any third party services that your app will use
+
+## Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+## Discuss the database relations to be implemented in your application
+
+
+## Provide your database schema design
+
+## Describe the way tasks are allocated and tracked in your project

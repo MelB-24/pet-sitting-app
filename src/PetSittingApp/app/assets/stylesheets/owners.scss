@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.new {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-form {
+  width: 40%;
+  height: 60vh;
+  border-style: solid;
+  border-width: 1px;
+
+}
+
+.new-form h1 {
+  font-family: 'Staatliches', cursive;
+}
+
+.new-field {
+  font-family: 'Poppins', sans-serif;
+  padding: 12px;
+}
+
+.new-field input {
+  width: 300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  height: 35px;
+}
 
 .owner-dashboard {
   height: 100vh;
