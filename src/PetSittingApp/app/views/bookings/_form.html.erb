@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
   </div>
 
   <div class="field">
-    <%= form.label :time_starts %>
-    <%= form.time_select :time_starts %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time_finishes %>
-    <%= form.time_select :time_finishes %>
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
   </div>
 
   <div>

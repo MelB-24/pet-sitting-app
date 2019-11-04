@@ -1,18 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @booking.date %>
-</p>
-
-<p>
   <strong>Time starts:</strong>
-  <%= @booking.time_starts.strftime('%H:%M') %>
+  <%= @booking.start_time %>
 </p>
 
 <p>
   <strong>Time finishes:</strong>
-  <%= @booking.time_finishes.strftime('%H:%M') %>
+  <%= @booking.end_time %>
 </p>
 
 <p>
