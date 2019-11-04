@@ -11,27 +11,31 @@
     </div>
 
     <div class='bookings-index'>
-      <h1>My Bookings</h1>
+      <div class='booking-headers'>
+        <h1>My Bookings</h1>
+        
+        <% if owner_user_signed_in? %>
+            <%= link_to 'New Booking', new_booking_path, class: 'new-booking-link' %> 
+        <% end %>  
+      </div>
+      <div class=''>
+        <%= month_calendar events: @bookings do |date, bookings| %>
+          <%= date.day %>
 
-      <%= month_calendar events: @bookings do |date, bookings| %>
-        <%= date.day %>
-
-        <% bookings.each do |booking| %>
-          <div>
-            <%= booking.start_time %>
-            <%= booking.end_time %>
-            <%= booking.approved_sitter.owner.dogs.name %>
-            <%= booking.approved_sitter.sitter.name %>
-          </div>
+          <% bookings.each do |booking| %>
+            <div>
+              <%= booking.start_time.strftime("%H:%M - ")  %>
+              <%= booking.end_time.strftime("%H:%M") %>
+              <br>
+              <%= booking.approved_sitter.owner.dogs.name %>
+              <br>
+              <% if owner_user_signed_in? %>
+                <%= booking.approved_sitter.sitter.name %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-
-      <br>
-
-      <% if owner_user_signed_in? %>
-          <%= link_to 'New Booking', new_booking_path %> 
-      <% end %>  
-    </div>
+      </div>
   </div>
 </div>
 

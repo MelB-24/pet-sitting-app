@@ -2,7 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.new-booking-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  background-color: #9CD9E4;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1B181E;
+}
+
+.new-booking-link:hover {
+  text-decoration: none;
+  transform: scale(1.05);
+  color: #1B181E;
+}
+
+.booking-headers {
+  display: flex;
+  justify-content: space-between;
+}
 
 .bookings-index {
   max-width: calc(100vw - 300px);
+  margin: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookings-index h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+
 }
