@@ -29,6 +29,7 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
+    @owner = current_owner_user.owner
   end
 
   # GET /bookings/1/edit
@@ -40,15 +41,16 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @booking.save
-        format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
+        redirect_to bookings_path
+        # format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
+        # format.json { render :index, status: :created, location: @booking }
       else
-        format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        # format.html { render :new }
+        # format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /bookings/1

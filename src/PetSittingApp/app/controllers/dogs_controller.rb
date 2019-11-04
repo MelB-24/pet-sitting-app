@@ -6,6 +6,7 @@ class DogsController < ApplicationController
   # GET /dogs.json
   def index
     @dogs = current_owner_user.owner.dogs
+    @owner = current_owner_user.owner
   end
 
   # GET /dogs/1
@@ -15,7 +16,6 @@ class DogsController < ApplicationController
 
   # GET /dogs/new
   def new
-
     @dog = current_owner_user.owner.dogs.new
   end
 
@@ -70,6 +70,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :breed, :date_of_birth, :microchip_number, :bio, :sex, :owner_id)
+      params.require(:dog).permit(:name, :breed, :date_of_birth, :microchip_number, :bio, :sex, :owner_id, :picture)
     end
 end

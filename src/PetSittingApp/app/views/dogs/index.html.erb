@@ -1,38 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class='owner-dashboard'>
+  <%= render 'layouts/owner-top-nav' %>
+  <div class='main-booking'>
+    <%= render 'layouts/owner-side-links' %>
+    <div class='dogs-index'>
+      <div class='dogs-headers'>
+        <h1>My Dogs</h1>
+        <%= link_to 'New Dog', new_dog_path, class: 'new-link' %>
+      </div>
+      <div class='all-dog-avatars'>
+      <% @dogs.each do |dog| %>
+        <div class='dog-avatar'>
+          <h3>Name</h3><%= dog.name %>
+          <h3>Breed</h3><%= dog.breed %>
+          <h3>Date of Birth</h3><%= dog.date_of_birth %>
+          <h3>Microchip Number</h3><%= dog.microchip_number %>
+          <h3>Sex</h3><%= dog.sex %>
+          <h3>Bio</h3><%= dog.bio %>
+          <%= link_to 'Show', dog %>
+          <%= link_to 'Edit', edit_dog_path(dog) %>
+          <%= link_to 'Delete Profile', dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h1>My Dogs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Breed</th>
-      <th>Date of birth</th>
-      <th>Microchip number</th>
-      <th>Bio</th>
-      <th>Sex</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= dog.name %></td>
-        <td><%= dog.breed %></td>
-        <td><%= dog.date_of_birth %></td>
-        <td><%= dog.microchip_number %></td>
-        <td><%= dog.bio %></td>
-        <td><%= dog.sex %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Delete Profile', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dog', new_dog_path %>
-<%= link_to 'Dashboard', owners_path %>

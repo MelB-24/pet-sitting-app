@@ -1,21 +1,13 @@
 <div class='owner-dashboard'>
-  <div class='owner-top-nav'>
-    <h1 class='dashboard-heading'>Owner Dashboard</h1>
-    <h1>Welcome <%= @owner.name %></h1>
-  </div>
+  <%= render 'layouts/owner-top-nav' %>
   <div class='main-booking'>
-    <div class='side-links'>
-      <%= link_to 'My Bookings', bookings_path, class: 'side-link' %>
-      <%= link_to 'My Sitters', owners_my_sitters_path, class: 'side-link' %>
-      <%= link_to 'My Dogs', dogs_path, class: 'side-link' %>
-    </div>
-
+    <%= render 'layouts/owner-side-links' %>
     <div class='bookings-index'>
       <div class='booking-headers'>
         <h1>My Bookings</h1>
-        
+
         <% if owner_user_signed_in? %>
-            <%= link_to 'New Booking', new_booking_path, class: 'new-booking-link' %> 
+            <%= link_to 'New Booking', new_booking_path, class: 'new-link' %> 
         <% end %>  
       </div>
       <div class=''>
@@ -23,7 +15,7 @@
           <%= date.day %>
 
           <% bookings.each do |booking| %>
-            <div>
+            <button>
               <%= booking.start_time.strftime("%H:%M - ")  %>
               <%= booking.end_time.strftime("%H:%M") %>
               <br>
@@ -32,7 +24,7 @@
               <% if owner_user_signed_in? %>
                 <%= booking.approved_sitter.sitter.name %>
               <% end %>
-            </div>
+            </button>
           <% end %>
         <% end %>
       </div>

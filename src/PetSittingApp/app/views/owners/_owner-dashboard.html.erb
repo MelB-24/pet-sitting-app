@@ -1,11 +1,4 @@
 <div class='owner-dashboard'>
-  <div class='owner-top-nav'>
-    <h1 class='dashboard-heading'>Owner Dashboard</h1>
-    <h1>Welcome <%= @owner.name %></h1>
-  </div>
-  <div class='side-links'>
-    <%= link_to 'My Bookings', bookings_path, class: 'side-link' %>
-    <%= link_to 'My Sitters', owners_my_sitters_path, class: 'side-link' %>
-    <%= link_to 'My Dogs', dogs_path, class: 'side-link' %>
-  </div>
+  <%= render 'layouts/owner-top-nav' %>
+  <%= render 'layouts/owner-side-links' %>
 </div>
