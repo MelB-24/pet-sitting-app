@@ -18,22 +18,13 @@
 
         <% bookings.each do |booking| %>
           <div>
-            <%= booking.approved_sitter_id %>
+            <%= booking.start_time %>
+            <%= booking.end_time %>
+            <%= booking.approved_sitter.owner.dogs.name %>
+            <%= booking.approved_sitter.sitter.name %>
           </div>
         <% end %>
       <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
 
       <br>
 
