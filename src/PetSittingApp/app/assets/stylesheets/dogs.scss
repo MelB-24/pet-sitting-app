@@ -16,8 +16,9 @@
 
 
 .dogs-index {
-  max-width: calc(100vw - 400px);
-  margin: 18px;
+  max-width: calc(100vw - 300px);
+  padding: 12px;
+  // margin: 18px;
   display: flex;
   flex-direction: column;
 }
