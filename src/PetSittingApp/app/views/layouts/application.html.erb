@@ -14,7 +14,7 @@
     <nav class='nav-bar'>
       <div>
         <i class="fas fa-dog dog_icon"></i>
-        <a><%= link_to 'PetSitters', root_path, class: 'header' %></a>
+        <a><%= link_to 'PetSitters', root_path, class: 'nav-header' %></a>
       </div>
       <div>
         <% destroy_path = owner_user_signed_in? ? destroy_owner_user_session_path : destroy_sitter_user_session_path %>

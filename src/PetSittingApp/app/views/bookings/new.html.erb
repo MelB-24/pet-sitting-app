@@ -1,8 +1,8 @@
-<div class='owner-dashboard'>
+<div class='dashboard'>
   <%= render 'layouts/owner-top-nav' %>
-  <div class='main-booking'>
+  <div class='main-dashboard'>
     <%= render 'layouts/owner-side-links' %>
-    <div class='bookings-index'>
+    <div class='index'>
       <h1>New Booking</h1>
       <%= render 'form', booking: @booking %>
       <%= link_to 'Back', bookings_path %>

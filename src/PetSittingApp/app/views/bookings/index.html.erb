@@ -1,34 +1,51 @@
-<div class='owner-dashboard'>
-  <%= render 'layouts/owner-top-nav' %>
-  <div class='main-booking'>
-    <%= render 'layouts/owner-side-links' %>
-    <div class='bookings-index'>
-      <div class='booking-headers'>
-        <h1>My Bookings</h1>
+<div class='dashboard'>
+  <% if owner_user_signed_in? %>
+    <%= render 'layouts/owner-top-nav' %>
+  <% else %>
+    <%= render 'layouts/sitter-top-nav' %>
+  <% end %>
+  <div class='main-dashboard'>
+    <% if owner_user_signed_in? %>
+      <%= render 'layouts/owner-side-links' %>
+    <% else %>
+      <%= render 'layouts/sitter-side-links' %>
+    <% end %>
+    
+    <div class='index'>
+      <h1>My Bookings</h1>
+      <% if owner_user_signed_in? %>
+        <div>
+          <%= link_to 'New Booking', new_booking_path, class: 'new-link' %> 
+          <%= month_calendar events: @bookings do |date, bookings| %>
+            <%= date.day %>
 
-        <% if owner_user_signed_in? %>
-            <%= link_to 'New Booking', new_booking_path, class: 'new-link' %> 
-        <% end %>  
-      </div>
-      <div class=''>
+            <% bookings.each do |booking| %>
+              <%= booking.start_time.strftime("%H:%M - ")  %>
+              <%= booking.end_time.strftime("%H:%M") %>
+              <%= booking.approved_sitter.owner.dogs.name %>
+              <%= booking.approved_sitter.sitter.name %>
+              <%= link_to 'Show Booking', booking_path(booking) %>
+              <br>
+              <br>
+            <% end %>
+          <% end %>
+        </div>
+      <% else %>
         <%= month_calendar events: @bookings do |date, bookings| %>
           <%= date.day %>
 
           <% bookings.each do |booking| %>
-            <button>
-              <%= booking.start_time.strftime("%H:%M - ")  %>
-              <%= booking.end_time.strftime("%H:%M") %>
-              <br>
-              <%= booking.approved_sitter.owner.dogs.name %>
-              <br>
-              <% if owner_user_signed_in? %>
-                <%= booking.approved_sitter.sitter.name %>
-              <% end %>
-            </button>
+            <%= booking.start_time.strftime("%H:%M - ")  %>
+            <%= booking.end_time.strftime("%H:%M") %>
+            <%= booking.approved_sitter.owner.dogs.name %>
+            <%= booking.approved_sitter.owner.name %>
+            <%= link_to 'Show Booking', booking_path(booking) %>
+            <br>
+            <br>
           <% end %>
         <% end %>
-      </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
 

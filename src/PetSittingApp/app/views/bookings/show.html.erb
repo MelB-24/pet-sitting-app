@@ -1,19 +1,60 @@
-<p id="notice"><%= notice %></p>
+<div class='dashboard'>
+  <% if owner_user_signed_in? %>
+    <%= render 'layouts/owner-top-nav' %>
+  <% else %>
+    <%= render 'layouts/sitter-top-nav' %>
+  <% end %>
+  <div class='main-dashboard'>
+    <% if owner_user_signed_in? %>
+      <%= render 'layouts/owner-side-links' %>
+    <% else %>
+      <%= render 'layouts/sitter-side-links' %>
+    <% end %>
+    <div class='index'>
 
-<p>
-  <strong>Time starts:</strong>
-  <%= @booking.start_time %>
-</p>
+      <p>
+        <strong>Date:</strong>
+        <%= @booking.start_time.strftime("%d/%m/%Y") %>
+      </p>
 
-<p>
-  <strong>Time finishes:</strong>
-  <%= @booking.end_time %>
-</p>
+      <p>
+        <strong>Time starts:</strong>
+        <%= @booking.start_time.strftime("%H:%M") %>
+      </p>
 
-<p>
-  <strong>Sitter:</strong>
-  <%= @booking.approved_sitter.sitter.name %>
-</p>
+      <p>
+        <strong>Time finishes:</strong>
+        <%= @booking.end_time.strftime("%H:%M") %>
+      </p>
 
+      <p>
+      <% if owner_user_signed_in? %>
+        <strong>Sitter:</strong>
+        <%= @booking.approved_sitter.sitter.name %>
+      <% else %>
+        <strong>Dogs:</strong>
+        <%= @booking.approved_sitter.owner.dogs.name %>
+        <br>
+        <strong>Owner:</strong>
+        <%= @booking.approved_sitter.owner.name %>
+      <% end %>
+      </p>
 
-<%= link_to 'Back', bookings_path %>
+      <p>
+        <% if sitter_user_signed_in? %>
+          <% if @booking.approved_booking == nil %>
+            <h2>Do you Approve this booking?</h2>
+            <%= form_for @booking do |f| %>
+              <%= label_tag(:approved_booking, "Approved") %>
+              <%= f.radio_button :approved_booking, value: true, checked: true %>
+              <%= label_tag(:approved_booking, "Don't approve. Note this will delete the booking and the owner will be notifed.") %>
+              <%= f.radio_button :approved_booking, value: false %>
+              <%= submit_tag "Submit" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </p>
+
+    </div>
+  </div>
+</div>

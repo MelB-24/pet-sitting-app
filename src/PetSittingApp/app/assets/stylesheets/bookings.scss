@@ -15,9 +15,7 @@
   color: #1B181E;
 }
 
-.main-booking {
-  width: 100vw;
-}
+
 
 .new-link:hover {
   text-decoration: none;
@@ -30,14 +28,3 @@
   justify-content: space-between;
 }
 
-.bookings-index {
-  max-width: calc(100vw - 300px);
-  margin: 18px;
-  display: flex;
-  flex-direction: column;
-}
-
-.bookings-index h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 50px;
-}

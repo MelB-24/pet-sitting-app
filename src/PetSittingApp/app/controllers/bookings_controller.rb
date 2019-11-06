@@ -8,9 +8,11 @@ class BookingsController < ApplicationController
     
     if owner_user_signed_in?
       @bookings = current_owner_user.owner.bookings
+      @owner = current_owner_user.owner
     end
 
     if sitter_user_signed_in?
+      @sitter = current_sitter_user.sitter
       if current_sitter_user.sitter.approved_sitter != nil
         @bookings = current_sitter_user.sitter.approved_sitter.bookings
       else
@@ -18,7 +20,6 @@ class BookingsController < ApplicationController
       end
     end
 
-    @owner = current_owner_user.owner
   end
 
   # GET /bookings/1
@@ -81,7 +82,11 @@ class BookingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user_booking
       id = params[:id]
-      @owner = Owner.find_by_owner_user_id(current_owner_user.id)
+      if owner_user_signed_in?
+        @owner = Owner.find_by_owner_user_id(current_owner_user.id)
+      else
+        @sitter = Sitter.find_by_sitter_user_id(current_sitter_user.id)
+      end
     end
 
     def set_booking
@@ -90,7 +95,7 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:start_time, :end_time, :number_of_dogs, :approved_sitter_id)
+      params.require(:booking).permit(:start_time, :end_time, :number_of_dogs, :approved_sitter_id, :approved_booking)
     end
 
     

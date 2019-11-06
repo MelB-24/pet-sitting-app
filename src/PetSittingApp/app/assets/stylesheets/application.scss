@@ -20,6 +20,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins|Staatliches&display=swap');
 
 
+
+// main navbar 
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -30,22 +32,22 @@
   justify-content: space-between;
 }
 
-.header {
+.dog_icon {
+  font-size: 45px;
+  color: whitesmoke;
+  margin: 15px;
+}
+
+.nav-header {
   font-family: 'Poppins', sans-serif;
   font-size: 45px;
   color: white;
   text-decoration: none;
 }
 
-.header:hover {
+.nav-header:hover {
   text-decoration: none;
   color: whitesmoke;
-}
-
-.dog_icon {
-  font-size: 45px;
-  color: whitesmoke;
-  margin: 15px;
 }
 
 .dropdown {
@@ -93,71 +95,78 @@
 
 
 
-.main-form {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 80vh;
-  width: 100vw;
-}
 
-.form {
+
+// overall dahsboard container
+
+.dashboard {
+  height: 100vh;
+  // background-color: #FCF7FF;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 45%;
 }
 
-.form form {
-  width: 100%;
-}
 
-.main-form h2 {
-  font-size: 56px;
-  font-family: 'Staatliches', cursive;
-  padding: 12px;
-}
 
-.main-form img {
-  width: 45%;
-  height: auto;
-}
 
-.field {
-  font-family: 'Poppins', sans-serif;
-  padding: 12px;
-}
+// top dashboard header 
 
-input {
-  width: 100%;
-  border-radius: 10px;
-  border-style: solid;
-  border-width: 1px;
-  height: 35px;
-}
-
-.actions {
+.top-header-nav {
+  height: 50px;
+  background-color: #00A98B;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.actions input {
-  width: 60%;
-  margin: 12px;
-  background-color: #D3E3A7;
-  border: none;
+.dashboard-heading {
+  color: white;
+  font-family: 'Staatliches', cursive;
+  margin: 0px 12px;
 }
 
 
-#error_explanation {
-  font-size: 14px;
+
+
+// main container of dashboard
+
+.main-dashboard {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+// side links
+
+.side-links {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F5F7;
+  height: 100vh;
+}
+
+.side-link {
+  color: black;
+  padding: 18px;
+  box-shadow: 0px 5px 24px -18px rgba(0,0,0,0.75);
   font-family: 'Poppins', sans-serif;
 }
 
-#error_explanation h2 {
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  color: #C84949;
 
+
+
+// index part of dashboard
+
+.index {
+  max-width: calc(100vw - 350px);
+  margin: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.index h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
 }

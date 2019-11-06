@@ -33,3 +33,22 @@ This marketplace assignment I am building a Pet Sitting website that allows user
 ## Provide your database schema design
 
 ## Describe the way tasks are allocated and tracked in your project
+
+
+
+
+Explain the different high-level components (abstractions) in your App - 
+1. Active Record
+Product.all - becomes select all from Products
+layer on top of sql - compiling into ruby
+2. Active Storage 
+3. form helpers
+4. Devise
+
+
+relations has_many
+
+2. migration, foreign_keys, tables ERD
+
+integer because do math
+
