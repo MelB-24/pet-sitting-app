@@ -16,22 +16,25 @@
       <% if owner_user_signed_in? %>
         <div>
           <%= link_to 'New Booking', new_booking_path, class: 'new-link' %> 
-          <%= month_calendar events: @bookings do |date, bookings| %>
+          <%= week_calendar number_of_weeks: 2, events: @bookings do |date, bookings| %>
             <%= date.day %>
 
             <% bookings.each do |booking| %>
               <%= booking.start_time.strftime("%H:%M - ")  %>
               <%= booking.end_time.strftime("%H:%M") %>
+              <br>
               <%= booking.approved_sitter.owner.dogs.name %>
               <%= booking.approved_sitter.sitter.name %>
+              <br>
               <%= link_to 'Show Booking', booking_path(booking) %>
+              <%= link_to 'Cancel Booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
               <br>
               <br>
             <% end %>
           <% end %>
         </div>
       <% else %>
-        <%= month_calendar events: @bookings do |date, bookings| %>
+        <%= week_calendar number_of_weeks: 2, events: @bookings do |date, bookings| %>
           <%= date.day %>
 
           <% bookings.each do |booking| %>
