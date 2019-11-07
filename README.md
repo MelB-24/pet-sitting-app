@@ -1,5 +1,11 @@
+# Pet Sitting Website
 
-## Identification of the problem you are trying to solve by building this particular marketplace app.
+Website: [PetSittingWebsite](https://enigmatic-wildwood-24997.herokuapp.com/)
+
+GitHub: [PetSittingWebsite.github](https://github.com/MelB-24/pet-sitting-app)
+
+
+### Identification of the problem you are trying to solve by building this particular marketplace app.
 
 This marketplace website I am building is a Pet Sitting app that allows users to sign up to watch dogs or owners to send their dogs to a sitter. Although there are a few services that allow this, there is not one that is well known and used in Australia. 
 
@@ -21,14 +27,31 @@ Features of my website include owners creating their own profile as well as a pr
 ![Pet Sitting Site Map](docs/pet-sitting-site-map.png)
 
 - Screenshots
+
+![Home Page](docs/home-page-screenshot.png)
+![Sign Up Page](docs/sign-up-screenshot.png)
+![Sign In Page](docs/login-screen-shot.png)
+![Bookings Page](docs/bookings-screenshot.png)
+![Pet Profile Page](docs/dogs-profile-screenshot.png)
+
+
 - Target audience
+
+The audiences targeted for my website are owners of pets looking for people to look after their dogs and people who would like to earn some money pet sitting. 
+
 - Tech stack (e.g. html, css, deployment platform, etc)
+
+Used in this website is Ruby on Rails. The website has been deployed on Heroku. 
 
 ## User stories for your app
 
 ## Wireframes for your app
 
+![Wireframes](docs/wireframes.png)
+
 ## An ERD for your app
+
+![ERD](docs/ERD.png)
 
 ## Explain the different high-level components (abstractions) in your app
 
@@ -37,7 +60,6 @@ Features of my website include owners creating their own profile as well as a pr
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 
 ## Discuss the database relations to be implemented in your application
-
 
 ## Provide your database schema design
 
