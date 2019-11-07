@@ -55,7 +55,11 @@ Used in this website is Ruby on Rails. The website has been deployed on Heroku.
 
 ## Explain the different high-level components (abstractions) in your app
 
+1. Active Record - active record is what is referred to as the M or Model the MVC. Active record is responsible for the data and the creation of objects while storing in the database. 
+
 ## Detail any third party services that your app will use
+
+In the start I had intended to use stiripe for payment services, but due to time restraints I wasn't able to implement this feature. I have used AWS to store the images that a user uploads when they create a dogs profile. Other third party services that I would like to implement is MailGun, I would like this to be used in conjuction with bookings, for an email to be sent to a sitter when a booking is made and an email sent to the owner when a sitter approves their booking. The gems used in this website are devise and simple calender. Devise was used to allow the users to login and have their own profile in accordance to the role they are logged in as. I have used the simple calendar gem to show the users bookings to them in a easy to read format instead of an unordered messy list. I made a start on using bootstrap however I found it quite hard to implement so I had ended up doing the majority of the css styling myself. 
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 
@@ -64,6 +68,11 @@ Used in this website is Ruby on Rails. The website has been deployed on Heroku.
 ## Provide your database schema design
 
 ## Describe the way tasks are allocated and tracked in your project
+
+In this app I sorted tasks into Tech, README, and Slideshow lists in a trello board. I used these lists to tick off one by one what I had completed. 
+
+![Trello 1](docs/trello.png)
+![Trello 2](docs/wireframes.png)
 
 
 
