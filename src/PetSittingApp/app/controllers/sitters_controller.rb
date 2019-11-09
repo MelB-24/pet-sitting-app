@@ -44,9 +44,9 @@ class SittersController < ApplicationController
   # POST /sitters.json
   def create
     @sitter_user = current_sitter_user
-    @sitter = Sitter.create(sitter_params)
+    @sitter = Sitter.new(sitter_params)
     @sitter_user.sitter = @sitter
-
+    
     if @sitter.save
       redirect_to sitters_path
     else

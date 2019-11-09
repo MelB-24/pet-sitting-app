@@ -16,7 +16,7 @@ The pet business is one of the biggest growing industries in the world, includin
 ## Description of your marketplace app (website), including:
 - Purpose
 
-The purpose of my website is to allow a person who would like to pet sit dogs sign up to the site to make it very easy for them to find clients. Owners of dogs can also sign up on the website to easily find sitters in their area to send their dogs to. 
+The purpose of my website is to allow a person who would like to pet sit dogs, sign up to the site to make it very easy for them to find clients. Owners of dogs can also sign up on the website to easily find sitters in their area to send their dogs to. 
 
 - Functionality / features
 
@@ -45,6 +45,10 @@ Used in this website is Ruby on Rails. The website has been deployed on Heroku.
 
 ## User stories for your app
 
+"As an owner of a pet, I want to be able to sign up for a service where I can save my , so that they can get some exercise when I'm not home."
+"As a person with a lot of spare time and a love for pets, I want to be able to care for other people's dogs so I can earn some extra money."
+"
+
 ## Wireframes for your app
 
 ![Wireframes](docs/wireframes.png)
@@ -59,9 +63,11 @@ Used in this website is Ruby on Rails. The website has been deployed on Heroku.
 
 ## Detail any third party services that your app will use
 
-In the start I had intended to use stiripe for payment services, but due to time restraints I wasn't able to implement this feature. I have used AWS to store the images that a user uploads when they create a dogs profile. Other third party services that I would like to implement is MailGun, I would like this to be used in conjuction with bookings, for an email to be sent to a sitter when a booking is made and an email sent to the owner when a sitter approves their booking. The gems used in this website are devise and simple calender. Devise was used to allow the users to login and have their own profile in accordance to the role they are logged in as. I have used the simple calendar gem to show the users bookings to them in a easy to read format instead of an unordered messy list. I made a start on using bootstrap however I found it quite hard to implement so I had ended up doing the majority of the css styling myself. 
+In the start I had intended to use stripe for payment services, but due to time restraints I wasn't able to implement this feature. I have used AWS to store the images that a user uploads when they create a dogs profile. Other third party services that I would like to implement is MailGun, I would like this to be used in conjuction with bookings, for an email to be sent to a sitter when a booking is made and an email sent to the owner when a sitter approves their booking. The gems used in this website are devise and simple calender. Devise was used to allow the users to login and have their own profile and dashboard in accordance to the role they are logged in as. I have used the simple calendar gem to show the users bookings to them in a easy to read format instead of an unordered messy list. I made a start on using bootstrap however I found it quite hard to implement so I had ended up doing the majority of the css styling myself. 
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+
 
 ## Discuss the database relations to be implemented in your application
 
@@ -69,10 +75,10 @@ In the start I had intended to use stiripe for payment services, but due to time
 
 ## Describe the way tasks are allocated and tracked in your project
 
-In this app I sorted tasks into Tech, README, and Slideshow lists in a trello board. I used these lists to tick off one by one what I had completed. 
+In this app I sorted tasks into Tech, README, and Slideshow lists in a trello board. I used these lists to tick off one by one what I had completed by changing the colours to green.  
 
 ![Trello 1](docs/trello.png)
-![Trello 2](docs/wireframes.png)
+![Trello 2](docs/trello2.png)
 
 
 

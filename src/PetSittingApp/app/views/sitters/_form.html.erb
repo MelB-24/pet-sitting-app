@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
+    <%= form.label :state%>
+    <%= form.select :state, state: ["VIC", "NSW", "WA", "TAS", "NT", "ACT", "QLD", "SA"]  %>
   </div>
 
   <div class="field">
