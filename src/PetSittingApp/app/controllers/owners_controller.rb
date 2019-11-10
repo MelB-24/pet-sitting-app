@@ -39,6 +39,7 @@ class OwnersController < ApplicationController
   # POST /owners
   # POST /owners.json
   def create
+    # these lines must be out of the if statement otherwise it doesnt find the id from the url to assign to devise. Ideally they should be inside so validation could be added. Since ran out of time to do validation then better to have it working. 
     @owner_user = current_owner_user
     @owner = Owner.create(owner_params)
     @owner_user.owner = @owner

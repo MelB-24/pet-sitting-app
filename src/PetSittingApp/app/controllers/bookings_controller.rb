@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    
+    # need to have seperate if statements depending on who is logged in at the time. Variables are different depending. 
     if owner_user_signed_in?
       @bookings = current_owner_user.owner.bookings
       @owner = current_owner_user.owner
@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
       if current_sitter_user.sitter.approved_sitter != nil
         @bookings = current_sitter_user.sitter.approved_sitter.bookings
       else
+        # must display as an empty array so no errors occur. 
         @bookings = []
       end
     end

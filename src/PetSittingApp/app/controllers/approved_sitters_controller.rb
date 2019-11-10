@@ -3,6 +3,5 @@ class ApprovedSittersController < ApplicationController
   end
 
   def create
-    # 
   end
 end
