@@ -32,9 +32,6 @@
         <strong>Sitter:</strong>
         <%= @booking.approved_sitter.sitter.name %>
       <% else %>
-        <strong>Dogs:</strong>
-        <%= @booking.approved_sitter.owner.dogs.name %>
-        <br>
         <strong>Owner:</strong>
         <%= @booking.approved_sitter.owner.name %>
       <% end %>
@@ -53,6 +50,15 @@
             <% end %>
           <% end %>
         <% end %>
+      </p>
+
+      <p>
+        <strong>Approved:</strong>
+          <% if @booking.approved_booking == nil || @booking.approved_booking == false %>
+            Not Approved by <%= @booking.approved_sitter.sitter.name %>
+          <% else %>
+            Approved
+          <% end %>
       </p>
 
     </div>

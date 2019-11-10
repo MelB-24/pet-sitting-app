@@ -23,7 +23,6 @@
               <%= booking.start_time.strftime("%H:%M - ")  %>
               <%= booking.end_time.strftime("%H:%M") %>
               <br>
-              <%= booking.approved_sitter.owner.dogs.name %>
               <%= booking.approved_sitter.sitter.name %>
               <br>
               <%= link_to 'Show Booking', booking_path(booking) %>
@@ -40,7 +39,6 @@
           <% bookings.each do |booking| %>
             <%= booking.start_time.strftime("%H:%M - ")  %>
             <%= booking.end_time.strftime("%H:%M") %>
-            <%= booking.approved_sitter.owner.dogs.name %>
             <%= booking.approved_sitter.owner.name %>
             <%= link_to 'Show Booking', booking_path(booking) %>
             <br>

@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
         @bookings = []
       end
     end
-
   end
 
   # GET /bookings/1

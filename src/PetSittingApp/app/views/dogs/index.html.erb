@@ -10,6 +10,7 @@
       <div class='all-dog-avatars'>
       <% @dogs.each do |dog| %>
         <div class='dog-avatar'>
+          <%= image_tag   dog.picture if dog.picture.attached? %>
           <h3>Name</h3><%= dog.name %>
           <h3>Breed</h3><%= dog.breed %>
           <h3>Date of Birth</h3><%= dog.date_of_birth %>

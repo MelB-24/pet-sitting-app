@@ -196,7 +196,4 @@ In this app I sorted tasks into Tech, README, and Slideshow lists in a trello bo
 ![Trello 2](docs/trello2.png)
 ![Trello 3](docs/trello3.png)
 
-2. migration, foreign_keys, tables ERD
-
-integer because do math
 
