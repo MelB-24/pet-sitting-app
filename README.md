@@ -47,7 +47,10 @@ Used in this website is Ruby on Rails. The website has been deployed on Heroku.
 
 "As an owner of a pet, I want to be able to easily sign up for a website.  where I can save my , so that they can get some exercise when I'm not home."
 "As a person with a lot of spare time and a love for pets, I want to be able to care for other people's dogs so I can earn some extra money."
-"
+"As a pet owner I want to be able to add sitters to a list of people that I prefer, so that I only send my dogs to people I trust"
+"As a pet owner I want to be able to make a booking with one of my approved sitters at the click of a button so that I can spend more time with my dogs while I am home"
+"As a person who likes to look after dogs I want to be able to see my calender of all my bookings so I dont have to search through my bookings"
+"As a person who looks after a lot of dogs, I want to be able to approve a booking or not if I have too many people booked on that day"
 
 ## Wireframes for your app
 
